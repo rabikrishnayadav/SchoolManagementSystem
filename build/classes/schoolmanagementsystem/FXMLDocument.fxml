@@ -28,7 +28,7 @@
                   <FontAwesomeIcon fill="#662d60" glyphName="USERS" layoutX="167.0" layoutY="129.0" size="6em" textAlignment="CENTER" wrappingWidth="66.8571424484253" />
                   <TextField fx:id="username" layoutX="113.0" layoutY="225.0" onKeyTyped="#textfieldDesign" onMouseClicked="#textfieldDesign" onMouseDragged="#textfieldDesign" prefHeight="35.0" prefWidth="180.0" promptText="Username" styleClass="textfield-design" stylesheets="@design.css" />
                   <PasswordField fx:id="password" layoutX="113.0" layoutY="268.0" onKeyTyped="#textfieldDesign" onMouseClicked="#textfieldDesign" onMouseDragged="#textfieldDesign" prefHeight="35.0" prefWidth="180.0" promptText="Password" styleClass="textfield-design" stylesheets="@design.css" />
-                  <Button fx:id="login_btn" layoutX="160.0" layoutY="328.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="80.0" styleClass="button-design" stylesheets="@design.css" text="Login" textAlignment="CENTER" textFill="WHITE" />
+                  <Button fx:id="login_btn" layoutX="160.0" layoutY="328.0" mnemonicParsing="false" onAction="#login" prefHeight="40.0" prefWidth="80.0" styleClass="button-design" stylesheets="@design.css" text="Login" textAlignment="CENTER" textFill="WHITE" />
                   <Hyperlink fx:id="create_acc" layoutX="143.0" layoutY="424.0" onAction="#changeForm" styleClass="hypertext-design" stylesheets="@design.css" text="Create new Account?" textAlignment="CENTER" />
                </children>
             </AnchorPane>
