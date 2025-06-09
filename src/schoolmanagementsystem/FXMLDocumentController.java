@@ -11,6 +11,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ResourceBundle;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -224,6 +227,31 @@ public class FXMLDocumentController implements Initializable {
         }
         
     }
+
+    public boolean validationEmail(){
+//        EXAMPLE: admin@email.com [FIRST LETTER] [2ND LETTER TO NUMBER] @ [email] . [com]
+        Pattern pattern = Pattern.compile("[a-zA-Z0-9][a-zA-Z0-9._]*@[a-zA-Z0-9]+([.][a-zA-Z]+)+");
+        
+        Matcher match = pattern.matcher(su_email.getText());
+        
+        if(match.find() && match.group().equals(su_email.getText())){
+            
+            return true;
+            
+        }else{
+            
+            Alert alert = new Alert(AlertType.ERROR);
+            
+            alert.setTitle("Error Message");
+            alert.setHeaderText(null);
+            alert.setContentText("Invalid Email");
+            alert.showAndWait();
+            
+            return false;
+            
+        }
+        
+    }
     
     public void login(){
         
@@ -271,6 +299,64 @@ public class FXMLDocumentController implements Initializable {
             
         }catch(Exception e){}
         
+    }
+    
+    public void signup(){
+        
+        connect = database.connectDb();
+        
+        String sql = "INSERT INTO account (username,password,email) VALUES(?,?,?)";
+        
+        try{
+            
+            if(su_username.getText().isEmpty() 
+                    | su_password.getText().isEmpty()
+                    | su_email.getText().isEmpty()){
+                
+                Alert alert = new Alert(AlertType.ERROR);
+                
+                alert.setTitle("Error Message");
+                alert.setHeaderText(null);
+                alert.setContentText("Enter all field blanks!");
+                alert.showAndWait();
+                
+            }else if(su_password.getText().length() < 3){
+                
+                Alert alert = new Alert(AlertType.ERROR);
+                
+                alert.setTitle("Error Message");
+                alert.setHeaderText(null);
+                alert.setContentText("Invalid Password");
+                alert.showAndWait();
+                
+            }
+            else{
+            
+                if(validationEmail()){
+
+                    prepare = connect.prepareStatement(sql);
+                    prepare.setString(1, su_username.getText()); 
+                    prepare.setString(2, su_password.getText());
+                    prepare.setString(3, su_email.getText());
+                    
+                    prepare.execute();
+
+                    su_email.setText("");
+                    su_username.setText("");
+                    su_password.setText("");
+                    
+                    Alert alert = new Alert(AlertType.INFORMATION);
+
+                    alert.setTitle("School Managment System");
+                    alert.setHeaderText(null);
+                    alert.setContentText("Successfully create a new account!");
+                    alert.showAndWait();
+                    
+                }
+                
+            }
+        }catch(Exception e){e.printStackTrace();}
+            
     }
     
     @Override

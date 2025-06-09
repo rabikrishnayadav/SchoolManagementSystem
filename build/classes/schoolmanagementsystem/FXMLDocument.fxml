@@ -11,7 +11,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="schoolmanagementsystem.FXMLDocumentController">
    <children>
-      <AnchorPane fx:id="login_form" prefHeight="500.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane fx:id="login_form" prefHeight="500.0" prefWidth="800.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <AnchorPane layoutX="400.0" prefHeight="500.0" prefWidth="400.0">
                <children>
@@ -43,7 +43,7 @@
             </AnchorPane>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="signup_form" prefHeight="500.0" prefWidth="800.0" visible="false">
+      <AnchorPane fx:id="signup_form" prefHeight="500.0" prefWidth="800.0">
          <children>
             <AnchorPane prefHeight="500.0" prefWidth="400.0">
                <children>
@@ -55,7 +55,7 @@
                   <FontAwesomeIcon fill="#662d60" glyphName="USER_PLUS" layoutX="167.0" layoutY="129.0" size="6em" textAlignment="CENTER" wrappingWidth="66.8571424484253" />
                   <TextField fx:id="su_email" layoutX="114.0" layoutY="211.0" onKeyTyped="#textfieldDesign1" onMouseClicked="#textfieldDesign1" onMouseDragged="#textfieldDesign1" prefHeight="35.0" prefWidth="180.0" promptText="Email Address" styleClass="textfield-design" stylesheets="@design.css" />
                   <PasswordField fx:id="su_password" layoutX="113.0" layoutY="295.0" onKeyTyped="#textfieldDesign1" onMouseClicked="#textfieldDesign1" onMouseDragged="#textfieldDesign1" prefHeight="35.0" prefWidth="180.0" promptText="Password" styleClass="textfield-design" stylesheets="@design.css" />
-                  <Button fx:id="signup_btn" layoutX="160.0" layoutY="355.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="80.0" styleClass="button-design" stylesheets="@design.css" text="SignUp" textAlignment="CENTER" textFill="WHITE" />
+                  <Button fx:id="signup_btn" layoutX="160.0" layoutY="355.0" mnemonicParsing="false" onAction="#signup" prefHeight="40.0" prefWidth="80.0" styleClass="button-design" stylesheets="@design.css" text="SignUp" textAlignment="CENTER" textFill="WHITE" />
                   <Hyperlink fx:id="login_acc" layoutX="143.0" layoutY="424.0" onAction="#changeForm" styleClass="hypertext-design" stylesheets="@design.css" text="Login your Account?" textAlignment="CENTER" />
                   <TextField fx:id="su_username" layoutX="116.0" layoutY="253.0" onKeyTyped="#textfieldDesign1" onMouseClicked="#textfieldDesign1" onMouseDragged="#textfieldDesign1" prefHeight="35.0" prefWidth="180.0" promptText="Username" styleClass="textfield-design" stylesheets="@design.css" />
                </children>
