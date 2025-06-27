@@ -9,9 +9,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="schoolmanagementsystem.FXMLDocumentController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/" xmlns:fx="http://javafx.com/fxml/" fx:controller="schoolmanagementsystem.FXMLDocumentController">
    <children>
-      <AnchorPane fx:id="login_form" prefHeight="500.0" prefWidth="800.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane fx:id="login_form" prefHeight="500.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <AnchorPane layoutX="400.0" prefHeight="500.0" prefWidth="400.0">
                <children>
@@ -43,7 +43,7 @@
             </AnchorPane>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="signup_form" prefHeight="500.0" prefWidth="800.0">
+      <AnchorPane fx:id="signup_form" prefHeight="500.0" prefWidth="800.0" visible="false">
          <children>
             <AnchorPane prefHeight="500.0" prefWidth="400.0">
                <children>

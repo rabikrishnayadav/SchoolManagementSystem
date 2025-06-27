@@ -269,6 +269,8 @@ public class FXMLDocumentController implements Initializable {
             
             if(result.next()){
                 
+                User.username = result.getString("username");
+                
                 Alert alert = new Alert(AlertType.INFORMATION);
                 
                 alert.setTitle("MarcoMan Message");
